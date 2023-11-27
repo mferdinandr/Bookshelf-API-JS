@@ -30,7 +30,7 @@ const addBookHandler = (request, h) => {
       });
       response.code(400);
       return response;
-   };
+   }
 
    const id = nanoid(16);
    const insertedAt = new Date().toISOString();

@@ -111,9 +111,9 @@ const getAllBooksHandler = (request, h) => {
 };
 
 const getBooksByIdHandler = (request, h) => {
-   const { id } = request.params;
+   const { bookId } = request.params;
 
-   const book = books.filter((n) => n.id) === id[0];
+   const book = books.filter((n) => n.id === bookId)[0];
 
    if (book !== undefined) {
       return {
@@ -217,7 +217,7 @@ const deleteBookByIdHandler = (request, h) => {
       status: 'fail',
       message: 'Buku gagal dihapus. Id tidak ditemukan',
    });
-   response.coe(404);
+   response.code(404);
    return response;
 };
 
